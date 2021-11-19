@@ -1,0 +1,47 @@
+﻿<Window x:Class="exerciceCinema.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:exerciceCinema"
+        mc:Ignorable="d"
+        Title="Window1" Height="450" Width="800" Loaded="Window_Loaded">
+    <StackPanel>
+        <ListView x:Name="lvFilm" SelectionChanged="lvFilm_SelectionChanged">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+						<TextBlock Width="50" Text="{Binding NumeroFilm }"></TextBlock>
+						<TextBlock Width="200" Text="{Binding TitreFilm }"></TextBlock>
+						<TextBlock Width="50" Text="{Binding AnneFilm }"></TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <ListView Name="lvRealisateur">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+						<TextBlock Width="50" Text="{Binding IdRealisateur }"></TextBlock>
+						<TextBlock Width="100" Text="{Binding NomRealisateur }"></TextBlock>
+						<Image Width="80" Height="80" Source="{Binding PhotoRealisateur}"></Image>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+		<ListView Name="lvActeur">
+			<ListView.ItemTemplate>
+				<DataTemplate>
+					<StackPanel Orientation="Horizontal">
+						<TextBlock Width="50" Text="{Binding IdActeur }"></TextBlock>
+						<TextBlock Width="100" Text="{Binding NomActeur }"></TextBlock>
+						<TextBlock Width="100" Text="{Binding PrenomActeur }"></TextBlock>
+						<Image Width="80" Height="80" Source="{Binding PhotoActeur}"></Image>
+					</StackPanel>
+				</DataTemplate>
+			</ListView.ItemTemplate>
+		</ListView>
+        <!--<TextBlock Text="anne du sport"></TextBlock>
+        <TextBlock Name="CesariseActeur"></TextBlock>-->
+    </StackPanel>
+</Window>
